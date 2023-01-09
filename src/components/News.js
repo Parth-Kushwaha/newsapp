@@ -45,8 +45,8 @@ export default class News extends Component {
   }
     render() {
       return (
-        <div className='container my-2'>
-          <h2>OUR TOP HEADLINES</h2>
+        <div className='container my-2 '>
+          <h2 className='text-center'>OUR TOP HEADLINES</h2>
           <div className="row my-3">
             {this.state.articles.map((element)=>{
                 return <div className="col-md-4 my-3" key={element.url}>
