@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
+import Spinner from './Spinner';
 
 export default class News extends Component {
     constructor(){
@@ -47,6 +48,7 @@ export default class News extends Component {
       return (
         <div className='container my-2 '>
           <h2 className='text-center'>OUR TOP HEADLINES</h2>
+          <Spinner/>
           <div className="row my-3">
             {this.state.articles.map((element)=>{
                 return <div className="col-md-4 my-3" key={element.url}>
