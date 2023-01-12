@@ -57,9 +57,9 @@ export default class News extends Component {
       return (
         <div className='container my-2 '>
           <h2 className='text-center'>OUR TOP HEADLINES</h2>
-          <Spinner/>
+          {this.state.loading && <Spinner/>}
           <div className="row my-3">
-            {this.state.articles.map((element)=>{
+            {!this.state.loading && this.state.articles.map((element)=>{
                 return <div className="col-md-4 my-3" key={element.url}>
                     <NewsItem  title={element.title? element.title.slice(0,50): ""} description={element.description? element.description.slice(0,85) : ""} imageUrl={!element.urlToImage? "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_01/2705191/nbc-social-default.png":element.urlToImage} newsUrl={element.url}/>
                 </div>
@@ -69,7 +69,6 @@ export default class News extends Component {
           <button disabled={this.state.page<=1} onClick={this.HandlePrev} type="button" className="btn btn-dark">&larr; Previous</button>
           <button disabled={this.state.page +1 > Math.ceil(this.state.totalResults/this.props.pageSize)} onClick={this.HandleNext} type="button" className="btn btn-dark">Next &rarr;</button>
           </div>
-          
         </div>
       )
   }
