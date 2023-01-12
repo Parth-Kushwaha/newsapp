@@ -17,11 +17,18 @@ export default class News extends Component {
 
     static defaultProps={
       country: "in",
-      pageSize: 12
+      pageSize: 12,
+      category: "general"
+    }
+
+    static propTypes={
+      country : PropTypes.string,
+      pageSize: PropTypes.number,
+      category: PropTypes.string,
     }
 
     async componentDidMount(){
-        let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=ed368439ccef49609ae709e6d14d17cc&page=1&pageSize=${this.props.pageSize}`;
+        let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=ed368439ccef49609ae709e6d14d17cc&page=1&pageSize=${this.props.pageSize}`;
         this.setState({loading: true});
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -36,7 +43,7 @@ export default class News extends Component {
       console.log("next")
       if(!this.state.page +1 > Math.ceil(this.state.totalResults/this.props.pageSize)){}
       else{
-        let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=ed368439ccef49609ae709e6d14d17cc&page=${this.state.page +1}&pageSize=${this.props.pageSize}`;
+        let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=ed368439ccef49609ae709e6d14d17cc&page=${this.state.page +1}&pageSize=${this.props.pageSize}`;
         this.setState({loading: true})
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -49,7 +56,7 @@ export default class News extends Component {
       }
     }
     HandlePrev=async()=>{
-      let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=ed368439ccef49609ae709e6d14d17cc&page=${this.state.page -1}&pageSize=${this.props.pageSize}`;
+      let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=ed368439ccef49609ae709e6d14d17cc&page=${this.state.page -1}&pageSize=${this.props.pageSize}`;
       this.setState({loading: true})
       let data = await fetch(url);
       let parsedData = await data.json();
