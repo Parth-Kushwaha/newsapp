@@ -17,7 +17,10 @@ export default class App extends Component {
       <div>
         <Router>
         <Navbar/>
-        <News pageSize={9} country="in" category="general"/>
+        <Routes>
+          <Route exact path="/general" element={<News pageSize={9} country="in" category="general"/>}></Route>
+        </Routes>
+        
         </Router>
       </div>
     )

@@ -1,7 +1,8 @@
-business
-entertainment
-general
-healths
-science
-sports
-technology
+<Route exact path="/business" element={<News pageSize={9} country="in" category="business"/>}></Route>
+<Route exact path="/entertainment" element={<News pageSize={9} country="in" category="entertainment"/>}></Route>
+<Route exact path="/healths" element={<News pageSize={9} country="in" category="healths"/>}></Route>
+<Route exact path="/science" element={<News pageSize={9} country="in" category="science"/>}></Route>
+<Route exact path="/sports" element={<News pageSize={9} country="in" category="sports"/>}></Route>
+<Route exact path="/technology" element={<News pageSize={9} country="in" category="technology"/>}></Route>
+
+<Route exact path="/general" element={<News pageSize={9} country="in" category="general"/>}></Route>
