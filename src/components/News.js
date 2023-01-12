@@ -70,7 +70,7 @@ export default class News extends Component {
     render() {
       return (
         <div className='container my-2 '>
-          <h2 className='text-center'>OUR TOP HEADLINES</h2>
+          <h2 className='text-center my-4'>OUR TOP HEADLINES</h2>
           {this.state.loading && <Spinner/>}
           <div className="row my-3">
             {!this.state.loading && this.state.articles.map((element)=>{
