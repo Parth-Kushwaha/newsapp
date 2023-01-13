@@ -66,6 +66,9 @@ export default class News extends Component {
           page: this.state.page +1,
           loading: false
         })
+        this.setState({
+          page: this.state.page+1
+        })
       }
     }
     HandlePrev=async()=>{
