@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 export default class News extends Component {
     constructor(){
         super();
-        console.log("const from news comp");
         this.state={
             articles: [],
             loading: false,
@@ -32,7 +31,6 @@ export default class News extends Component {
         this.setState({loading: true});
         let data = await fetch(url);
         let parsedData = await data.json();
-        console.log(parsedData);
         this.setState({
           articles: parsedData.articles, 
           totalResults: parsedData.totalResults,
