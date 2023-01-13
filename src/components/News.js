@@ -76,10 +76,15 @@ export default class News extends Component {
     })
     this.updateNews()
   }
+
+    capitalizeFirstLetter=(string)=>{
+    return string[0].toUpperCase() + string.slice(1);
+    }
+
     render() {
       return (
         <div className='container my-2 '>
-          <h2 className='text-center my-4'>OUR TOP HEADLINES</h2>
+          <h2 className='text-center my-4'>OUR TOP HEADLINES {this.capitalizeFirstLetter(this.props.category)}</h2>
           {this.state.loading && <Spinner/>}
           <div className="row my-3">
             {!this.state.loading && this.state.articles.map((element)=>{
