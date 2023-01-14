@@ -108,10 +108,10 @@ export default class News extends Component {
               })}
             </div>
           </InfiniteScroll>
-          <div className="container d-flex justify-content-between">
+          {/* <div className="container d-flex justify-content-between">
           <button disabled={this.state.page<=1} onClick={this.HandlePrev} type="button" className="btn btn-dark">&larr; Previous</button>
           <button disabled={this.state.page +1 > Math.ceil(this.state.totalResults/this.props.pageSize)} onClick={this.HandleNext} type="button" className="btn btn-dark">Next &rarr;</button>
-          </div>
+          </div> */}
         </div>
       )
   }
