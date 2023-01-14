@@ -73,11 +73,13 @@ export default class News extends Component {
     //     page: this.state.page -1,
     //     loading: false
     // })
-    this.setState({
-      page: this.state.page-1
-    })
-    this.updateNews()
-  }
+      this.setState({
+        page: this.state.page-1
+      })
+      this.updateNews()
+    }
+
+    
 
     capitalizeFirstLetter=(string)=>{
     return string[0].toUpperCase() + string.slice(1);
