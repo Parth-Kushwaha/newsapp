@@ -90,7 +90,7 @@ export default class News extends Component {
           <InfiniteScroll
             dataLength={this.state.articles.length}
             next={this.fetchMoreData}
-            hasMore={this.state.articles.length !== this.totalResults}
+            hasMore={this.state.articles.length !== this.state.totalResults}
             loader={<h4>Loading...</h4>}
           >
             <div className="row my-3">
