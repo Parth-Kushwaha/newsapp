@@ -79,7 +79,10 @@ export default class News extends Component {
       this.updateNews()
     }
 
-    
+    fetchMoreData=()=>{
+      this.setState({page: this.state.page+1})
+      this.updateNews() 
+    }
 
     capitalizeFirstLetter=(string)=>{
     return string[0].toUpperCase() + string.slice(1);
