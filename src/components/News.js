@@ -98,7 +98,7 @@ export default class News extends Component {
 
     render() {
       return (
-        <div className='container my-2 '>
+        <>
           <h2 className='text-center my-4'>Top {this.capitalizeFirstLetter(this.props.category)} Headlines </h2>
           {/* {this.state.loading && <Spinner/>} */}
           <InfiniteScroll
@@ -107,25 +107,28 @@ export default class News extends Component {
             hasMore={this.state.articles.length !== this.state.totalResults}
             loader={<Spinner/>}
           >
-            <div className="row my-3">
-              {this.state.articles.map((element)=>{
-                  return <div className="col-md-4 my-3" key={element.url}>
-                      <NewsItem  title={element.title? element.title.slice(0,50): ""} 
-                      description={element.description? element.description.slice(0,85) : ""} 
-                      source={element.source.name} 
-                      author={element.author} 
-                      date={element.publishedAt} 
-                      imageUrl={!element.urlToImage? "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_01/2705191/nbc-social-default.png":element.urlToImage} 
-                      newsUrl={element.url}/>
-                  </div>
-              })}
+            <div className="container">
+              <div className="row my-3">
+                {this.state.articles.map((element)=>{
+                    return <div className="col-md-4 my-3" key={element.url}>
+                        <NewsItem  title={element.title? element.title.slice(0,50): ""} 
+                        description={element.description? element.description.slice(0,85) : ""} 
+                        source={element.source.name} 
+                        author={element.author} 
+                        date={element.publishedAt} 
+                        imageUrl={!element.urlToImage? "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_01/2705191/nbc-social-default.png":element.urlToImage} 
+                        newsUrl={element.url}/>
+                    </div>
+                })}
+              </div>
+            
             </div>
           </InfiniteScroll>
           {/* <div className="container d-flex justify-content-between">
           <button disabled={this.state.page<=1} onClick={this.HandlePrev} type="button" className="btn btn-dark">&larr; Previous</button>
           <button disabled={this.state.page +1 > Math.ceil(this.state.totalResults/this.props.pageSize)} onClick={this.HandleNext} type="button" className="btn btn-dark">Next &rarr;</button>
           </div> */}
-        </div>
+        </>
       )
   }
 }
