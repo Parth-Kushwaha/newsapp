@@ -109,18 +109,18 @@ export default class News extends Component {
           >
             <div className="container">
               <div className="row my-3">
-                {this.state.articles.map((element)=>{
-                    return <div className="col-md-4 my-3" key={element.url}>
-                        <NewsItem  title={element.title? element.title.slice(0,50): ""} 
-                        description={element.description? element.description.slice(0,85) : ""} 
-                        source={element.source.name} 
-                        author={element.author} 
-                        date={element.publishedAt} 
-                        imageUrl={!element.urlToImage? "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_01/2705191/nbc-social-default.png":element.urlToImage} 
-                        newsUrl={element.url}/>
-                    </div>
-                })}
-              </div>
+              {this.state.articles.map((element,index)=>{
+                  return <div className="col-md-4 my-3" key={index}>
+                      <NewsItem  title={element.title? element.title.slice(0,50): ""} 
+                      description={element.description? element.description.slice(0,85) : ""} 
+                      source={element.source.name} 
+                      author={element.author} 
+                      date={element.publishedAt} 
+                      imageUrl={!element.urlToImage? "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_01/2705191/nbc-social-default.png":element.urlToImage} 
+                      newsUrl={element.url}/>
+                  </div>
+              })}
+            </div>
             
             </div>
           </InfiniteScroll>
