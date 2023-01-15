@@ -16,6 +16,10 @@ export default class App extends Component {
   state={
     progress:0
   }
+
+  setProgress=()=>{
+    this.setState({progress: progress})
+  }
   render() {
     return (
       <div>
