@@ -20,7 +20,7 @@ export default class App extends Component {
           <Navbar/>
           <LoadingBar
             color='#f11946'
-            progress={10}
+            progress={this.state.progress}
            
           />
           <Routes>
