@@ -20,8 +20,8 @@ export default class App extends Component {
           <Navbar/>
           <LoadingBar
             color='#f11946'
-            progress={progress}
-            onLoaderFinished={() => setProgress(0)}
+            progress={10}
+           
           />
           <Routes>
             <Route exact path="/general" element={<News pageSize={this.pageSize} country="in" category="general"/>}></Route>
