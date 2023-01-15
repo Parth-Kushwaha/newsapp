@@ -13,6 +13,9 @@ import {
 
 export default class App extends Component {
   pageSize=9;
+  state={
+    progress:0
+  }
   render() {
     return (
       <div>
