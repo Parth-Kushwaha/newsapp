@@ -18,6 +18,11 @@ export default class App extends Component {
       <div>
         <Router>
           <Navbar/>
+          <LoadingBar
+            color='#f11946'
+            progress={progress}
+            onLoaderFinished={() => setProgress(0)}
+          />
           <Routes>
             <Route exact path="/general" element={<News pageSize={this.pageSize} country="in" category="general"/>}></Route>
             <Route exact path="/business" element={<News key="business" pageSize={this.pageSize} country="in" category="business"/>}></Route>
