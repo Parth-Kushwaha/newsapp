@@ -27,6 +27,7 @@ export default class App extends Component {
           <Navbar/>
           <LoadingBar
             color='#f11946'
+            height={4}
             progress={this.state.progress}
            
           />
