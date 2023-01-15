@@ -40,7 +40,7 @@ export default class News extends Component {
           totalResults: parsedData.totalResults,
           loading: false
         })
-        this.props.setProgress(100)
+        this.props.setProgress(100);
     }
 
     async componentDidMount(){
