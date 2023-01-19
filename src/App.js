@@ -14,9 +14,6 @@ import {
 const App=()=>{
   const pageSize=9;
   const apiKey=process.env.REACT_APP_NEWS_API
-  state={
-    progress:0
-  }
   const[progress, setProgress]= useState(0)
 
     return (
@@ -44,3 +41,4 @@ const App=()=>{
     )
 
 }
+export default App
