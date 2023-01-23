@@ -124,7 +124,6 @@ export default class News extends Component {
                   </div>
               })}
             </div>
-            
             </div>
           </InfiniteScroll>
           {/* <div className="container d-flex justify-content-between">
